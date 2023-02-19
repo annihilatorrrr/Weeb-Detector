@@ -71,20 +71,23 @@ data_augmentation = keras.Sequential(
 #Datasets made here
 new_base_dir = r"Dataset/ExpandedSet"
 train_dataset = image_dataset_from_directory(
-    new_base_dir + r"/train",
+    f"{new_base_dir}/train",
     label_mode='categorical',
     image_size=(80, 80),
-    batch_size=BATCH_SIZE)
+    batch_size=BATCH_SIZE,
+)
 validation_dataset = image_dataset_from_directory(
-    new_base_dir + "/validation",
+    f"{new_base_dir}/validation",
     label_mode='categorical',
     image_size=(80, 80),
-    batch_size=BATCH_SIZE)
+    batch_size=BATCH_SIZE,
+)
 test_dataset = image_dataset_from_directory(
-    new_base_dir + "/test",
+    f"{new_base_dir}/test",
     label_mode='categorical',
     image_size=(80, 80),
-    batch_size=BATCH_SIZE)
+    batch_size=BATCH_SIZE,
+)
 
 #Building architecture here
 inputs = keras.Input(shape=(80, 80, 3))
